@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { formatTime } from "../helpers/formatTime";
 import "./style/ClockDate.css";
 
 const ClockDate = () => {
   const [convert, setConvert] = useState(0);
   const [date, setDate] = useState("");
+  const [showDotsS, setShowDotsS] = useState(false);
+
+  const showDots = useRef();
+
   const [time, setTime] = useState({
     hour: "",
     minutes: "",
@@ -14,6 +18,7 @@ const ClockDate = () => {
 
   useEffect(() => {
     const timeInterval = setInterval(clock, 1000);
+
     return () => {
       clearInterval(timeInterval);
     };
@@ -31,6 +36,8 @@ const ClockDate = () => {
       period: convert ? (convertHour < 0 ? "am" : "pm") : "",
     });
     setDate(now.toDateString().toUpperCase());
+    showDots.current = !showDots.current;
+    setShowDotsS(showDots.current);
   };
 
   const convertTime = (value) => {
@@ -48,7 +55,9 @@ const ClockDate = () => {
           <h5>{date} </h5>
         </div>
         <div className="time">
-          <span>{time.hour}</span>:<span>{time.minutes}</span>
+          <span>{time.hour}</span>
+          {showDotsS ? ":" : " "}
+          <span>{time.minutes}</span>
           <span className="seconds">{time.seconds}</span>
           {time.period && <span className="period">{time.period}</span>}
         </div>
