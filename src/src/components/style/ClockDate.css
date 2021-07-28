@@ -1,27 +1,22 @@
 .date-time {
   text-align: center;
-  font-size: 50px;
   font-family: "DSEG14-Classic";
-  background: #9ba08b;
+  background: #e4662c;
   float: left;
   width: 700px;
   overflow: hidden;
-
   height: 700px;
   border-radius: 50%;
-  border: 20px solid black;
+  border: 60px double black;
   margin: auto 30%;
-  box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
-  -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
-  -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+
 }
 .date-time h5 {
   letter-spacing: 3px;
-  word-spacing: 15px;
   color: rgb(0, 0, 0);
 }
 .time {
-  font-size: 70px;
+  font-size: 100px;
   color: black;
   font-weight: bold;
 }
@@ -31,11 +26,15 @@
 .title-clock {
   margin-top: 20px;
   background-color: black;
-  color: #9ba08b;
+  color: #e4662c;
+  font-size: 50px;
   padding: 20px;
+  box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
 }
 .wrapper {
-  border: 3px solid black;
+  border: 5px solid black;
   border-radius: 20px;
   margin-bottom: 20px;
   margin-left: 10%;
@@ -51,10 +50,31 @@
   padding: 15px;
   height: 150px;
   background-color: black;
-  color: #9ba08b;
+  color: #e4662c;
   font-family: "DSEG14-Classic";
   border: transparent;
   box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
   -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
   -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+}
+
+.date {
+  margin-top: 1px;
+  font-size: 55px;
+  word-spacing: 10px;
+}
+
+.weather {
+  font-family: "DSEGWeather";
+}
+
+.icon-weather {
+  font-size: 200px;
+  border: 1px solid black;
+  padding: 0px;
+}
+
+.period {
+  font-size: 60px;
+  padding-left: 20px;
 }

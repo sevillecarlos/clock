@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { formatTime } from "../helpers/formatTime";
-import { twelveHourConverter } from "../helpers/twelveHourConverter";
 import "./style/ClockDate.css";
 
 const ClockDate = () => {
-  const [convert, setConvert] = useState(false);
+  const [convert, setConvert] = useState(0);
   const [date, setDate] = useState("");
   const [time, setTime] = useState({
     hour: "",
     minutes: "",
     seconds: "",
+    period: "",
   });
 
   useEffect(() => {
@@ -19,26 +19,24 @@ const ClockDate = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const convert = JSON.parse(localStorage.getItem("&C"));
-    setConvert(convert);
-  }, []);
-
   const clock = () => {
     const convert = JSON.parse(localStorage.getItem("&C"));
     const now = new Date();
+    const hour = formatTime(now.getHours());
+    const convertHour = convert ? hour - 12 : hour;
     setTime({
-      hour: formatTime(now.getHours()),
+      hour: Math.abs(convertHour),
       minutes: formatTime(now.getMinutes()),
       seconds: formatTime(now.getSeconds()),
+      period: convert ? (convertHour < 0 ? "am" : "pm") : "",
     });
     setDate(now.toDateString().toUpperCase());
   };
 
   const convertTime = (value) => {
     setConvert(value);
-    clock();
     localStorage.setItem("&C", value);
+    clock();
   };
   return (
     <div className="date-time">
@@ -46,10 +44,13 @@ const ClockDate = () => {
         <span>Clock</span>
       </div>
       <div className="wrapper">
-        <h5>{date} </h5>
+        <div className="date">
+          <h5>{date} </h5>
+        </div>
         <div className="time">
           <span>{time.hour}</span>:<span>{time.minutes}</span>
           <span className="seconds">{time.seconds}</span>
+          {time.period && <span className="period">{time.period}</span>}
         </div>
       </div>
       <button className="hour-changer" onClick={() => convertTime(!convert)}>
