@@ -1,12 +1,60 @@
-@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
-
 .date-time {
-  border: 1px solid black;
   text-align: center;
   font-size: 50px;
-  font-family: "Prata", serif;
+  font-family: "DSEG14-Classic";
+  background: #9ba08b;
+  float: left;
+  width: 700px;
+  overflow: hidden;
+
+  height: 700px;
+  border-radius: 50%;
+  border: 20px solid black;
+  margin: auto 30%;
+  box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
 }
 .date-time h5 {
   letter-spacing: 3px;
-  word-spacing: 20px;
+  word-spacing: 15px;
+  color: rgb(0, 0, 0);
+}
+.time {
+  font-size: 70px;
+  color: black;
+  font-weight: bold;
+}
+.seconds {
+  font-size: 40px;
+}
+.title-clock {
+  margin-top: 20px;
+  background-color: black;
+  color: #9ba08b;
+  padding: 20px;
+}
+.wrapper {
+  border: 3px solid black;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  margin-top: 10%;
+  box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  width: 80%;
+}
+.hour-changer {
+  font-size: 50px;
+  border-radius: 50px;
+  padding: 15px;
+  height: 150px;
+  background-color: black;
+  color: #9ba08b;
+  font-family: "DSEG14-Classic";
+  border: transparent;
+  box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
 }

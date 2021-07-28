@@ -1,33 +1,60 @@
 import React, { useState, useEffect } from "react";
 import { formatTime } from "../helpers/formatTime";
-import './style/ClockDate.css'
+import { twelveHourConverter } from "../helpers/twelveHourConverter";
+import "./style/ClockDate.css";
 
 const ClockDate = () => {
-  const [timeInfo, setTimeInfo] = useState("");
-  const [dateInfo, setDateInfo] = useState("");
+  const [convert, setConvert] = useState(false);
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState({
+    hour: "",
+    minutes: "",
+    seconds: "",
+  });
 
   useEffect(() => {
-    updateTimeDate();
+    const timeInterval = setInterval(clock, 1000);
+    return () => {
+      clearInterval(timeInterval);
+    };
   }, []);
 
-  const updateTimeDate = () => {
-    setInterval(() => {
-      const now = new Date();
-      const hour = now.getHours();
-      const min = now.getMinutes();
-      const second = now.getSeconds();
-      setTimeInfo(
-        `${formatTime(hour)}:${formatTime(min)}:${formatTime(second)}`
-      );
-      setDateInfo(now.toDateString());
-    }, 1000);
+  useEffect(() => {
+    const convert = JSON.parse(localStorage.getItem("&C"));
+    setConvert(convert);
+  }, []);
+
+  const clock = () => {
+    const convert = JSON.parse(localStorage.getItem("&C"));
+    const now = new Date();
+    setTime({
+      hour: formatTime(now.getHours()),
+      minutes: formatTime(now.getMinutes()),
+      seconds: formatTime(now.getSeconds()),
+    });
+    setDate(now.toDateString().toUpperCase());
   };
 
+  const convertTime = (value) => {
+    setConvert(value);
+    clock();
+    localStorage.setItem("&C", value);
+  };
   return (
     <div className="date-time">
-      <h5>{timeInfo}</h5>
-      <h5>{dateInfo}</h5>
-      <button>Change to 12-hour clock</button>
+      <div className="title-clock">
+        <span>Clock</span>
+      </div>
+      <div className="wrapper">
+        <h5>{date} </h5>
+        <div className="time">
+          <span>{time.hour}</span>:<span>{time.minutes}</span>
+          <span className="seconds">{time.seconds}</span>
+        </div>
+      </div>
+      <button className="hour-changer" onClick={() => convertTime(!convert)}>
+        {convert ? 24 : 12}-hour
+      </button>
     </div>
   );
 };
