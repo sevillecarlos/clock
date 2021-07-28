@@ -25,7 +25,7 @@ const ClockDate = () => {
     const hour = formatTime(now.getHours());
     const convertHour = convert ? hour - 12 : hour;
     setTime({
-      hour: Math.abs(convertHour),
+      hour: convert ? Math.abs(convertHour) : convertHour,
       minutes: formatTime(now.getMinutes()),
       seconds: formatTime(now.getSeconds()),
       period: convert ? (convertHour < 0 ? "am" : "pm") : "",
