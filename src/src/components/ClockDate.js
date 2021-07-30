@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
+import ClockColorContext from "../../store/ClockColorContext";
 import { formatTime } from "../helpers/formatTime";
 import "./style/ClockDate.css";
 
@@ -6,7 +7,9 @@ const ClockDate = () => {
   const [convert, setConvert] = useState(0);
   const [date, setDate] = useState("");
   const [showDotsS, setShowDotsS] = useState(false);
+  const color = useContext(ClockColorContext);
 
+  console.log(color);
   const showDots = useRef();
 
   const [time, setTime] = useState({
@@ -18,7 +21,6 @@ const ClockDate = () => {
 
   useEffect(() => {
     const timeInterval = setInterval(clock, 1000);
-
     return () => {
       clearInterval(timeInterval);
     };
@@ -45,9 +47,10 @@ const ClockDate = () => {
     localStorage.setItem("&C", value);
     clock();
   };
+
   return (
-    <div className="date-time">
-      <div className="title-clock">
+    <div className="date-time" style={{ background: color }}>
+      <div className="title-clock" style={{ color: color }}>
         <span>Clock</span>
       </div>
       <div className="wrapper">
@@ -62,7 +65,11 @@ const ClockDate = () => {
           {time.period && <span className="period">{time.period}</span>}
         </div>
       </div>
-      <button className="hour-changer" onClick={() => convertTime(!convert)}>
+      <button
+        className="hour-changer"
+        style={{ color: color }}
+        onClick={() => convertTime(!convert)}
+      >
         {convert ? 24 : 12}-hour
       </button>
     </div>

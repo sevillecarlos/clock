@@ -1,4 +1,33 @@
 .home {
   width: 100%;
-  margin: 1% auto;
+  margin: 0% auto;
+}
+
+.colors {
+  padding: 15px;
+  float: left;
+}
+
+.btn-color {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: 5px;
+  border: transparent;
+  box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+}
+
+.orange {
+  background-color: #ff8600;
+}
+.pink {
+  background-color: #ff0a54;
+}
+.blue {
+  background-color: #0aefff;
+}
+.red {
+  background-color: #e71d36;
 }
