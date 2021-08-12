@@ -1,4 +1,4 @@
-import Home from "./src/views/Home";
+import Home from "./views/Home";
 
 function App() {
   return (

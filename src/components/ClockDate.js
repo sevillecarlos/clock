@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import ClockColorContext from "../../store/ClockColorContext";
+import ClockColorContext from "../store/ClockColorContext";
 import { formatTime } from "../helpers/formatTime";
 import "./style/ClockDate.css";
 
@@ -77,3 +77,6 @@ const ClockDate = () => {
 };
 
 export default ClockDate;
+
+
+//add stopwatch and temporizator with sound

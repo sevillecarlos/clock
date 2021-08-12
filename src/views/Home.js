@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ClockDate from "../components/ClockDate";
-import ClockColorContext from "../../store/ClockColorContext";
+import ClockColorContext from "../store/ClockColorContext";
 
 import "./style/Home.css";
 
