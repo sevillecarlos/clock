@@ -1,13 +1,13 @@
 .date-time {
-  text-align: center;
   font-family: "DSEG14-Classic";
-  float: left;
   width: 650px;
   overflow: hidden;
   height: 650px;
   border-radius: 50%;
-  border: 60px double black;
-  margin: auto 30%;
+  border: 50px double black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
 }
 
 .date-time h5 {
@@ -30,6 +30,7 @@
   box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
   -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
   -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  cursor: pointer;
 }
 .wrapper {
   border: 5px solid black;
@@ -65,7 +66,54 @@
   font-size: 60px;
   padding-left: 20px;
 }
-
+.clock-gadgets {
+  border: 15px solid black;
+  border-radius: 100%;
+  width: 700px;
+  height: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 30px;
+}
+.clock-btn {
+  border: none;
+  border-radius: 30px;
+  margin: 0%;
+  font-size: 25px;
+}
+.alarm {
+  font-size: 100px;
+  margin-top: 10.5%;
+}
+.time-alarm {
+  font-size: 50px;
+  font-weight: bold;
+}
+.second-alarm {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.period-alarm {
+  font-size: 30px;
+  margin-left: 10px;
+}
+.alarm-time {
+  margin-top: 5%;
+}
+.alarm-time-btn {
+  font-size: 25px;
+  border-radius: 50px;
+  margin-left: 4px;
+  padding: 15px;
+  height: 150px;
+  background-color: black;
+  font-family: "DSEG14-Classic";
+  border: transparent;
+  box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+}
 @media only screen and (max-width: 1200px) {
   .date-time {
     margin: 50% auto;
