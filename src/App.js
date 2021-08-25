@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="app">
       <Home />
-      <div class="footer">
+      <div className="footer">
         <a href="https://github.com/sevillecarlos" target='blank'>code by Carlos🍒</a>
       </div>
     </div>

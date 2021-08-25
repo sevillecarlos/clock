@@ -3,7 +3,7 @@
   overflow: hidden;
   height: 650px;
   border-radius: 50%;
-  border: 50px double rgb(17, 17, 17);
+  border: 50px double rgba(17, 17, 17, 0.644);
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
