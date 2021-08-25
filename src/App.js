@@ -1,9 +1,12 @@
 import Home from "./views/Home";
-
+import "./App.css";
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Home />
+      <div class="footer">
+        <a href="https://github.com/sevillecarlos" target='blank'>code by Carlos🍒</a>
+      </div>
     </div>
   );
 }

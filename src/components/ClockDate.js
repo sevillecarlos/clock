@@ -1,16 +1,18 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import ClockColorContext from "../store/ClockColorContext";
+// import ClockColorContext from "../store/ClockColorContext";
 import { formatTime } from "../helpers/formatTime";
 import "./style/ClockDate.css";
 
 const ClockDate = () => {
   const MODES = ["ALARM", "TIMER"];
+  const COLORS = ["#ff8600", "#ff0a54", "#0aefff", "#e71d36"];
   const [convert, setConvert] = useState(0);
   const [date, setDate] = useState("");
   const [modeCounter, setModeCounter] = useState(0);
+  const [colorCounter, setColorCounter] = useState(0);
   const [showDotsS, setShowDotsS] = useState(false);
   const [mode, setMode] = useState("");
-  const color = useContext(ClockColorContext);
+  // const color = useContext(ClockColorContext);
   const showDots = useRef();
 
   const [time, setTime] = useState({
@@ -59,7 +61,7 @@ const ClockDate = () => {
 
   const changeClockMode = () => {
     setModeCounter((prevState) => {
-      if (prevState >= 2) {
+      if (prevState >= MODES.length) {
         return (prevState = 0);
       }
       return prevState + 1;
@@ -68,13 +70,26 @@ const ClockDate = () => {
     setMode(MODES[modeCounter]);
   };
 
+  const changeClockColor = () => {
+    setColorCounter((prevState) => {
+      if (prevState >= COLORS.length - 1) {
+        return (prevState = 0);
+      }
+      return prevState + 1;
+    });
+  };
+
   return (
     <div className="clock">
-      <div className="date-time" style={{ background: color }}>
-        <div onClick={changeClockMode} className="title-clock" style={{ color: color }}>
-          <span > {modeCounter !== 0 ? mode : "CLOCK"} </span>
+      <div className="date-time" style={{ background: COLORS[colorCounter] }}>
+        <div
+          onClick={changeClockMode}
+          className="title-clock"
+          style={{ color: COLORS[colorCounter] }}
+        >
+          <span> {modeCounter !== 0 ? mode : "CLOCK"} </span>
         </div>
-        <div className="wrapper">
+        <div onClick={changeClockColor} className="wrapper">
           {/* clock */}
           {modeCounter === 0 && (
             <>
@@ -114,7 +129,7 @@ const ClockDate = () => {
         {modeCounter === 0 && (
           <button
             className="hour-changer"
-            style={{ color: color }}
+            style={{ color: COLORS[colorCounter] }}
             onClick={() => convertTime(!convert)}
           >
             {convert ? 24 : 12}-hour
@@ -124,12 +139,15 @@ const ClockDate = () => {
           <>
             <button
               className="alarm-time-btn set-time"
-              style={{ color: color }}
+              style={{ color: COLORS[colorCounter] }}
             >
               Set time
             </button>
-            <button className="alarm-time-btn confirm" style={{ color: color }}>
-              Confirm
+            <button
+              className="alarm-time-btn confirm"
+              style={{ color: COLORS[colorCounter] }}
+            >
+              Change
             </button>
           </>
         )}

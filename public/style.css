@@ -1,3 +1,4 @@
-body{
-background-color: #000000;
+body {
+  background-color: rgb(0, 0, 0) !important;
+  font-family: "DSEG14-Classic" !important;
 }

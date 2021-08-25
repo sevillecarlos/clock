@@ -34,3 +34,17 @@
 .red {
   background-color: #e71d36;
 }
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%; 
+  text-align: center;
+  font-size: 20px;
+  padding: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.footer:hover {
+  color: #fff;
+}
