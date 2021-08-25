@@ -66,13 +66,21 @@ const ClockDate = () => {
     setShowDotsS(showDots.current);
 
     const alarmTime = localStorage.getItem("alarmtime");
+    const pausealarm = localStorage.getItem("pausealarm");
     if (alarmTime) {
       const clockTime = `${hour}:${minutes}`;
-
       if (alarmTime === clockTime) {
-        setPlayAlarm(true);
+        // if (pausealarm) {
+        //   setPlayAlarm(false);
+        //   return;
+        // }
+
+        console.log(alarmTime);
+//here is the issue of the delay on the alarm SET TIME  button
+        // setPlayAlarm(true);
       } else {
-        setPlayAlarm(false);
+        // setPlayAlarm(false);
+        // localStorage.removeItem("pausealarm");
       }
     }
   };
@@ -114,6 +122,10 @@ const ClockDate = () => {
     setTurnAlarmDigit(ALARM_DIGITS[alarmDigitCounter]);
   };
 
+  const stopAlarm = () => {
+    localStorage.setItem("pausealarm", true);
+  };
+
   const setTimeAlarm = () => {
     if (turnAlarmDigit === "HOUR_FIRST_DIGIT") {
       setAlarm((prevState) => {
@@ -124,7 +136,18 @@ const ClockDate = () => {
 
     if (turnAlarmDigit === "HOUR_SECOND_DIGIT") {
       setAlarm((prevState) => {
-        if (alarm.hourSecondDigit > 3) alarm.hourSecondDigit = 0;
+        if (alarm.hourFirstDigit === 0) {
+          if (alarm.hourSecondDigit > 9) alarm.hourSecondDigit = 0;
+        }
+
+        if (alarm.hourFirstDigit === 1) {
+          if (alarm.hourSecondDigit > 9) alarm.hourSecondDigit = 0;
+        }
+
+        if (alarm.hourFirstDigit === 2) {
+          if (alarm.hourSecondDigit > 3) alarm.hourSecondDigit = 0;
+        }
+
         return { ...prevState, hourSecondDigit: alarm.hourSecondDigit++ };
       });
     }
@@ -255,27 +278,36 @@ const ClockDate = () => {
             {convert ? 24 : 12}-hour
           </button>
         )}
-        {mode === "ALARM" && (
-          <>
-            <button
-              className="alarm-time-btn confirm"
-              style={{ color: COLORS[colorCounter] }}
-              onClick={changeDigit}
-            >
-              Change
-            </button>{" "}
+        {mode === "ALARM" &&
+          (playAlarm ? (
             <button
               className="alarm-time-btn set-time"
               style={{ color: COLORS[colorCounter] }}
-              onClick={setTimeAlarm}
+              onClick={stopAlarm}
             >
-              Set time
+              Stop Alarm
             </button>
-          </>
-        )}
+          ) : (
+            <>
+              <button
+                className="alarm-time-btn confirm"
+                style={{ color: COLORS[colorCounter] }}
+                onClick={changeDigit}
+              >
+                Change
+              </button>{" "}
+              <button
+                className="alarm-time-btn set-time"
+                style={{ color: COLORS[colorCounter] }}
+                onClick={setTimeAlarm}
+              >
+                Set time
+              </button>
+            </>
+          ))}
       </div>
       {playAlarm && (
-        <ReactAudioPlayer src={alarmSound} loop autoPlay={playAlarm}/>
+        <ReactAudioPlayer src={alarmSound} loop autoPlay={playAlarm} />
       )}
     </div>
   );
