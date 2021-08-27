@@ -22,7 +22,7 @@
 .seconds {
   font-size: 40px;
 }
-.clock{
+.clock {
   padding-bottom: 30px;
 }
 .title-clock {
@@ -79,6 +79,7 @@
 .alarm {
   font-size: 100px;
   margin-top: 10.5%;
+  font-weight: bold;
 }
 .time-alarm {
   font-size: 50px;
@@ -108,6 +109,31 @@
   box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
   -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
   -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+}
+.timer {
+  font-size: 100px;
+  margin-top: 26%;
+  font-weight: bold;
+}
+.nano-second-timer {
+  font-size: 50px;
+}
+.timer-time-btn{
+  font-size: 25px;
+  border-radius: 50px;
+  margin-left: 4px;
+  padding: 15px;
+  height: 150px;
+  background-color: black;
+  font-family: "DSEG14-Classic";
+  border: transparent;
+  box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+
+}
+.pause-time{
+  font-size: 50px;
 }
 @media only screen and (max-width: 1200px) {
   .date-time {
