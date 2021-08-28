@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { formatTime } from "../helpers/formatTime";
-import ReactAudioPlayer from "react-audio-player";
-import alarmSound from "../assets/sound/alarm-sound.mp3";
+import alarmOnSound from "../assets/sound/alarm-sound.mp3";
+import timerOffSound from "../assets/sound/timer-off.mp3";
 import "./style/ClockDate.css";
+
+const timerSound = new Audio(timerOffSound);
+const alarmSound = new Audio(alarmOnSound);
 
 const ClockDate = () => {
   const MODES = ["ALARM", "TIMER"];
@@ -31,8 +34,6 @@ const ClockDate = () => {
     "END",
   ];
 
-  let interval = null;
-
   const [convert, setConvert] = useState(0);
   const [date, setDate] = useState("");
   const [modeCounter, setModeCounter] = useState(0);
@@ -46,6 +47,12 @@ const ClockDate = () => {
 
   const [turnAlarmDigit, setTurnAlarmDigit] = useState("");
   const [turnTimerDigit, setTurnTimerDigit] = useState("");
+
+  const [alarmClock, setAlarmClock] = useState({
+    hour: "",
+    minutes: "",
+    seconds: "",
+  });
 
   const [startTimer, setStartTimer] = useState(false);
   const [stopTimer, setStopTimer] = useState(false);
@@ -77,7 +84,7 @@ const ClockDate = () => {
     minuteSecondDigit: 0,
     secondsFirstDigit: 0,
     secondsSecondDigit: 0,
-    nanoSeconds: 59,
+    nanoSeconds: 0,
   });
 
   const clock = () => {
@@ -87,6 +94,12 @@ const ClockDate = () => {
     const minutes = formatTime(now.getMinutes());
     const second = formatTime(now.getSeconds());
     const convertHour = convert && hour >= 13 ? hour - 12 : hour;
+
+    setAlarmClock({
+      hour: hour,
+      minutes: minutes,
+      seconds: second,
+    });
 
     setConvert(convert);
 
@@ -109,13 +122,17 @@ const ClockDate = () => {
   const checkSetAlarm = (clockTime, alarmTime) => {
     const pausealarm = localStorage.getItem("pausealarm");
     if (alarmTime === clockTime) {
+      setPlayAlarm(true);
       if (pausealarm) {
         setPlayAlarm(false);
+        alarmSound.pause();
         return;
       }
-      setPlayAlarm(true);
+      alarmSound.play();
     } else {
-      // localStorage.removeItem("pausealarm");
+      setPlayAlarm(false);
+      alarmSound.pause();
+      localStorage.removeItem("pausealarm");
     }
   };
 
@@ -271,12 +288,27 @@ const ClockDate = () => {
     );
   };
 
+  useEffect(() => {
+    if (startTimer) {
+      if (digitsTimerSeconds === 0 && digitsTimerMinutes === 0) {
+        setDigitsTimerMinutes(0);
+        setDigitsTimerSeconds(0);
+        setStartTimer(false);
+        setStopTimer(false);
+        localStorage.setItem("pausetimer", true);
+        timerSound.play();
+      }
+    }
+  }, [digitsTimerMinutes, digitsTimerSeconds, startTimer]);
+
   const pauseTimer = () => {
     setStopTimer(false);
     localStorage.setItem("pausetimer", true);
   };
 
   useEffect(() => {
+    if (startTimer) timer.nanoSeconds--;
+
     if (timer.nanoSeconds === 0) {
       setDigitsTimerSeconds((prevState) => {
         return prevState - 1;
@@ -290,9 +322,6 @@ const ClockDate = () => {
         return prevState - 1;
       });
     }
-
-    if (startTimer) timer.nanoSeconds--;
-
     setTimer((prevState) => {
       return {
         ...prevState,
@@ -327,20 +356,6 @@ const ClockDate = () => {
     }
   }, [turnAlarmDigit, alarm]);
 
-  useEffect(() => {
-    if (turnTimerDigit === "END") {
-      const joinSecondsDigits = parseInt(
-        `${timer.secondsFirstDigit}${timer.secondsSecondDigit}`
-      );
-
-      const joinMinutesDigits = parseInt(
-        `${timer.minuteFirstDigit}${timer.minuteSecondDigit}`
-      );
-      setDigitsTimerSeconds(joinSecondsDigits);
-      setDigitsTimerMinutes(joinMinutesDigits);
-    }
-  }, [turnTimerDigit, timer]);
-
   return (
     <div className="clock">
       <div className="date-time" style={{ background: COLORS[colorCounter] }}>
@@ -371,12 +386,9 @@ const ClockDate = () => {
           {mode === "ALARM" && (
             <>
               <div className="alarm-time">
-                <span className="time-alarm">{time.hour}:</span>
-                <span className="time-alarm">{time.minutes}</span>
-                <span className="second-alarm">{time.seconds}</span>
-                {time.period && (
-                  <span className="period-alarm">{time.period}</span>
-                )}
+                <span className="time-alarm">{alarmClock.hour}:</span>
+                <span className="time-alarm">{alarmClock.minutes}</span>
+                <span className="second-alarm">{alarmClock.seconds}</span>
               </div>
               <div className="alarm">
                 <span
@@ -559,9 +571,6 @@ const ClockDate = () => {
           </>
         )}
       </div>
-      {playAlarm && (
-        <ReactAudioPlayer src={alarmSound} loop autoPlay={playAlarm} />
-      )}
     </div>
   );
 };
