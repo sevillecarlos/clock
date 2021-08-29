@@ -3,20 +3,26 @@
   overflow: hidden;
   height: 650px;
   border-radius: 50%;
-  border: 50px double rgba(17, 17, 17, 0.644);
+  border: 50px double;
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
-
   margin-top: 2%;
+}
+
+.black {
+  border-color: rgba(226, 226, 222, 0.144);
+  background: black;
+}
+.beige {
+  border-color: rgba(17, 17, 17, 0.644);
+  background: beige;
 }
 .date-time h5 {
   letter-spacing: 3px;
-  color: rgb(0, 0, 0);
 }
 .time {
   font-size: 90px;
-  color: black;
   font-weight: bold;
 }
 .seconds {
@@ -25,40 +31,77 @@
 .clock {
   padding-bottom: 30px;
 }
+
 .title-clock {
   margin-top: 20px;
-  background-color: black;
   font-size: 50px;
   padding: 20px;
-  box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
-  -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
-  -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
   cursor: pointer;
+  font-weight: bold;
 }
-.wrapper {
-  border: 5px solid black;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  margin-left: 10%;
-  margin-top: 10%;
-  box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
-  -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
-  -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
-  width: 80%;
+.title-clock-black {
+  background-color: beige;
+  color: black;
+  box-shadow: 5px 5px 17px 4px rgba(245, 245, 220, 0.5);
+  -webkit-box-shadow: 5px 5px 17px 4px rgba(245, 245, 220, 0.5);
+  -moz-box-shadow: 5px 5px 17px 4px (245, 245, 220, 0.5);
 }
-.hour-changer {
-  font-size: 50px;
-  border-radius: 50px;
-  padding: 15px;
-  height: 150px;
+.title-clock-beige {
   background-color: black;
-  font-family: "DSEG14-Classic";
-  border: transparent;
+  color: beige;
   box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
   -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
   -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
 }
 
+.wrapper {
+  border: 5px solid;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  margin-top: 10%;
+  width: 80%;
+}
+.wrapper-black {
+  border-color: beige;
+  box-shadow: 5px 5px 17px 4px rgba(245, 245, 220, 0.5);
+  -webkit-box-shadow: 5px 5px 17px 4px rgba(245, 245, 220, 0.5);
+  -moz-box-shadow: 5px 5px 17px 4px (245, 245, 220, 0.5);
+  color: beige;
+}
+
+.wrapper-beige {
+  color: black;
+  border-color: black;
+  box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+}
+
+.hour-converter-btn {
+  font-size: 50px;
+  border-radius: 50px;
+  padding: 15px;
+  height: 150px;
+  font-family: "DSEG14-Classic";
+  border: transparent;
+  font-weight: bold;
+}
+.btn-beige {
+  background-color: black;
+  color: beige;
+  box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
+}
+
+.btn-black {
+  background-color: beige;
+  color: black;
+  box-shadow: 5px 5px 17px 4px rgba(245, 245, 220, 0.5);
+  -webkit-box-shadow: 5px 5px 17px 4px rgba(245, 245, 220, 0.5);
+  -moz-box-shadow: 5px 5px 17px 4px (245, 245, 220, 0.5);
+}
 .date {
   margin-top: 1px;
   font-size: 40px;
@@ -100,16 +143,14 @@
 .alarm-time-btn {
   font-size: 25px;
   border-radius: 50px;
+  font-weight: bold;
   margin-left: 4px;
   padding: 15px;
   height: 150px;
-  background-color: black;
   font-family: "DSEG14-Classic";
   border: transparent;
-  box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
-  -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
-  -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
 }
+
 .timer {
   font-size: 100px;
   margin-top: 26%;
@@ -118,21 +159,17 @@
 .nano-second-timer {
   font-size: 50px;
 }
-.timer-time-btn{
+.timer-time-btn {
   font-size: 25px;
   border-radius: 50px;
   margin-left: 4px;
   padding: 15px;
+  font-weight: bold;
   height: 150px;
-  background-color: black;
   font-family: "DSEG14-Classic";
   border: transparent;
-  box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
-  -webkit-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
-  -moz-box-shadow: 5px 5px 17px 4px rgba(0, 0, 0, 0.43);
-
 }
-.pause-time{
+.pause-time {
   font-size: 50px;
 }
 @media only screen and (max-width: 1200px) {

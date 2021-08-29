@@ -5,7 +5,10 @@ function App() {
     <div className="app">
       <Home />
       <div className="footer">
-        <a href="https://github.com/sevillecarlos" target='blank'>code by Carlos🍒</a>
+        <a href="https://github.com/sevillecarlos" target="blank">
+          <span className="footer-text1">code by</span>{" "}
+          <span className="footer-text2">Carlos🍒</span>
+        </a>
       </div>
     </div>
   );
