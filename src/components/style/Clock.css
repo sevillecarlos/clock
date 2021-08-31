@@ -140,6 +140,12 @@
 .alarm-time {
   margin-top: 5%;
 }
+.alarm-time-black{
+  color: beige;
+}
+.alarm-time-beige{
+  color: black;
+}
 .alarm-time-btn {
   font-size: 25px;
   border-radius: 50px;
