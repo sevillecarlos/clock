@@ -15,10 +15,29 @@
   color: rgb(43, 39, 39);
 }
 
-.footer-text1{
-  color: black ;
+.footer-text1 {
+  color: black;
 }
 
-.footer-text2{
-  color: beige ;
+.footer-text2 {
+  color: beige;
+}
+
+@media only screen and (max-width: 1200px) {
+}
+
+/* Small tablets to big tablets: from 768 to 1032*/
+@media only screen and (max-width: 1032px) {
+}
+
+/* Small phones to small tablets: from 481 to 767*/
+@media only screen and (max-width: 767px) {
+}
+
+/*Small Phone from 0 to 480px*/
+@media only screen and (max-width: 400px) {
+  .footer {
+    font-size: 15px;
+    padding: 10px;
+  }
 }

@@ -15,9 +15,9 @@ const ClockDate = () => {
   /********************STATES**************************************/
 
   /*********CLOCK*************/
+  const [themeColor, setThemeColor] = useState("beige");
   const [date, setDate] = useState("");
   const [modeCounter, setModeCounter] = useState(0);
-  const [colorCounter, setColorCounter] = useState(0);
   const [showDotsS, setShowDotsS] = useState(false);
   const [mode, setMode] = useState("");
   const [playAlarm, setPlayAlarm] = useState(false);
@@ -66,7 +66,7 @@ const ClockDate = () => {
 
   /*********CLOCK*************/
   const clock = () => {
-    const convert = JSON.parse(localStorage.getItem("&C"));
+    const convert = JSON.parse(localStorage.getItem("converter"));
     const now = new Date();
     const hour = formatTime(now.getHours());
     const minutes = formatTime(now.getMinutes());
@@ -100,7 +100,7 @@ const ClockDate = () => {
 
   const convertTime = (value) => {
     setConvert(value);
-    localStorage.setItem("&C", value);
+    localStorage.setItem("converter", value);
     clock();
   };
   const changeClockMode = () => {
@@ -114,14 +114,13 @@ const ClockDate = () => {
     setMode(MODES[modeCounter]);
   };
 
-  const changeClockColor = useCallback(() => {
-    setColorCounter((prevState) => {
-      if (prevState >= COLORS.length - 1) {
-        return (prevState = 0);
-      }
-      return prevState + 1;
-    });
-  }, []);
+  const changeClockColor = () => {
+    setThemeColor(COLORS[0] !== themeColor ? COLORS[0] : COLORS[1]);
+    localStorage.setItem(
+      "themecolor",
+      COLORS[0] !== themeColor ? COLORS[0] : COLORS[1]
+    );
+  };
 
   /**********ALARM**********/
 
@@ -276,6 +275,28 @@ const ClockDate = () => {
   };
 
   /********************EFFECTS**************************************/
+
+  useEffect(() => {
+    const alarmTime = localStorage.getItem("alarmtime");
+    const themeColor = localStorage.getItem("themecolor");
+    if (themeColor) setThemeColor(themeColor);
+
+    if (alarmTime) {
+      const [
+        hourFirstDigit,
+        hourSecondDigit,
+        minuteFirstDigit,
+        minuteSecondDigit,
+      ] = alarmTime.match(/\d+/g).join("");
+
+      setAlarm({
+        hourFirstDigit,
+        hourSecondDigit,
+        minuteFirstDigit,
+        minuteSecondDigit,
+      });
+    }
+  }, []);
   /************CLOCK*********/
   useEffect(() => {
     const timeInterval = setInterval(clock, 1000);
@@ -298,25 +319,6 @@ const ClockDate = () => {
       localStorage.setItem("alarmtime", alarmTime);
     }
   }, [turnAlarmDigit, alarm]);
-
-  useEffect(() => {
-    const alarmTime = localStorage.getItem("alarmtime");
-    if (alarmTime) {
-      const [
-        hourFirstDigit,
-        hourSecondDigit,
-        minuteFirstDigit,
-        minuteSecondDigit,
-      ] = alarmTime.match(/\d+/g).join("");
-
-      setAlarm({
-        hourFirstDigit,
-        hourSecondDigit,
-        minuteFirstDigit,
-        minuteSecondDigit,
-      });
-    }
-  }, []);
 
   /**********TIMER**********/
   useEffect(() => {
@@ -363,10 +365,10 @@ const ClockDate = () => {
 
   return (
     <div className="clock">
-      <div className={`date-time ${COLORS[colorCounter]}`}>
+      <div className={`date-time ${themeColor}`}>
         <div
           onClick={changeClockMode}
-          className={`title-clock title-clock-${COLORS[colorCounter]}`}
+          className={`title-clock title-clock-${themeColor}`}
         >
           <span> {modeCounter !== 0 ? mode : "CLOCK"} </span>
         </div>
@@ -376,7 +378,7 @@ const ClockDate = () => {
             <div>
               <div
                 onClick={changeClockColor}
-                className={`wrapper wrapper-${COLORS[colorCounter]}`}
+                className={`wrapper wrapper-${themeColor}`}
               >
                 {" "}
                 <div className="date">
@@ -391,7 +393,7 @@ const ClockDate = () => {
                 </div>{" "}
               </div>
               <button
-                className={`hour-converter-btn btn-${COLORS[colorCounter]}`}
+                className={`hour-converter-btn btn-${themeColor}`}
                 onClick={() => convertTime(!convert)}
               >
                 {convert ? 24 : 12}-hour
@@ -402,12 +404,10 @@ const ClockDate = () => {
             <>
               <div>
                 <div
-                  className={`wrapper wrapper-${COLORS[colorCounter]}`}
+                  className={`wrapper wrapper-${themeColor}`}
                   onClick={changeClockColor}
                 >
-                  <div
-                    className={`alarm-time alarm-time-${COLORS[colorCounter]}`}
-                  >
+                  <div className={`alarm-time alarm-time-${themeColor}`}>
                     <span className="time-alarm">{alarmClock.hour}:</span>
                     <span className="time-alarm">{alarmClock.minutes}</span>
                     <span className="second-alarm">{alarmClock.seconds}</span>
@@ -458,7 +458,7 @@ const ClockDate = () => {
                 </div>
                 {playAlarm ? (
                   <button
-                    className={`alarm-time-btn btn-${COLORS[colorCounter]}`}
+                    className={`alarm-time-btn btn-${themeColor}`}
                     onClick={stopAlarm}
                   >
                     Stop Alarm
@@ -466,13 +466,13 @@ const ClockDate = () => {
                 ) : (
                   <>
                     <button
-                      className={`alarm-time-btn btn-${COLORS[colorCounter]}`}
+                      className={`alarm-time-btn btn-${themeColor}`}
                       onClick={changeDigitAlarm}
                     >
                       Change
                     </button>{" "}
                     <button
-                      className={`alarm-time-btn btn-${COLORS[colorCounter]}`}
+                      className={`alarm-time-btn btn-${themeColor}`}
                       onClick={setTimeAlarm}
                     >
                       Set time
@@ -485,7 +485,7 @@ const ClockDate = () => {
           {mode === "TIMER" && (
             <div>
               <div
-                className={`wrapper wrapper-${COLORS[colorCounter]}`}
+                className={`wrapper wrapper-${themeColor}`}
                 onClick={changeClockColor}
               >
                 <div className="timer">
@@ -549,7 +549,7 @@ const ClockDate = () => {
               </div>
               {!stopTimer && (
                 <button
-                  className={`timer-time-btn btn-${COLORS[colorCounter]}`}
+                  className={`timer-time-btn btn-${themeColor}`}
                   onClick={changeDigitTimer}
                 >
                   Change
@@ -557,21 +557,21 @@ const ClockDate = () => {
               )}
               {turnTimerDigit !== "END" ? (
                 <button
-                  className={`timer-time-btn btn-${COLORS[colorCounter]}`}
+                  className={`timer-time-btn btn-${themeColor}`}
                   onClick={setTimeTimer}
                 >
                   Set time
                 </button>
               ) : stopTimer ? (
                 <button
-                  className={`timer-time-btn pause-time btn-${COLORS[colorCounter]}`}
+                  className={`timer-time-btn pause-time btn-${themeColor}`}
                   onClick={pauseTimer}
                 >
                   Pause
                 </button>
               ) : (
                 <button
-                  className={`timer-time-btn btn-${COLORS[colorCounter]}`}
+                  className={`timer-time-btn btn-${themeColor}`}
                   onClick={setTimerStart}
                 >
                   Start
