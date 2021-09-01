@@ -153,42 +153,52 @@ const ClockDate = () => {
   };
   const setTimeAlarm = () => {
     if (turnAlarmDigit === "HOUR_FIRST_DIGIT") {
-      console.log('Entre')
-      console.log(alarm)
       setAlarm((prevState) => {
-        if (alarm.hourFirstDigit > 2) alarm.hourFirstDigit = 0;
-        return { ...prevState, hourFirstDigit: alarm.hourFirstDigit++ };
+        if (alarm.hourFirstDigit > 1) {
+          return { ...prevState, hourFirstDigit: 0 };
+        }
+        return { ...prevState, hourFirstDigit: alarm.hourFirstDigit + 1 };
       });
     }
 
     if (turnAlarmDigit === "HOUR_SECOND_DIGIT") {
       setAlarm((prevState) => {
         if (alarm.hourFirstDigit === 0) {
-          if (alarm.hourSecondDigit > 9) alarm.hourSecondDigit = 0;
+          if (alarm.hourSecondDigit > 8) {
+            return { ...prevState, hourSecondDigit: 0 };
+          }
         }
 
         if (alarm.hourFirstDigit === 1) {
-          if (alarm.hourSecondDigit > 9) alarm.hourSecondDigit = 0;
+          if (alarm.hourSecondDigit > 8) {
+            return { ...prevState, hourSecondDigit: 0 };
+          }
         }
 
         if (alarm.hourFirstDigit === 2) {
-          if (alarm.hourSecondDigit > 3) alarm.hourSecondDigit = 0;
+          if (alarm.hourSecondDigit > 2) {
+            return { ...prevState, hourSecondDigit: 0 };
+          }
         }
 
-        return { ...prevState, hourSecondDigit: alarm.hourSecondDigit++ };
+        return { ...prevState, hourSecondDigit: alarm.hourSecondDigit + 1 };
       });
     }
     if (turnAlarmDigit === "MINUTE_FIRST_DIGIT") {
       setAlarm((prevState) => {
-        if (alarm.minuteFirstDigit > 5) alarm.minuteFirstDigit = 0;
-        return { ...prevState, minuteFirstDigit: alarm.minuteFirstDigit++ };
+        if (alarm.minuteFirstDigit > 4) {
+          return { ...prevState, minuteFirstDigit: 0 };
+        }
+        return { ...prevState, minuteFirstDigit: alarm.minuteFirstDigit + 1 };
       });
     }
 
     if (turnAlarmDigit === "MINUTE_SECOND_DIGIT") {
       setAlarm((prevState) => {
-        if (alarm.minuteSecondDigit > 9) alarm.minuteSecondDigit = 0;
-        return { ...prevState, minuteSecondDigit: alarm.minuteSecondDigit++ };
+        if (alarm.minuteSecondDigit > 8) {
+          return { ...prevState, minuteSecondDigit: 0 };
+        }
+        return { ...prevState, minuteSecondDigit: alarm.minuteSecondDigit + 1 };
       });
     }
   };
@@ -213,28 +223,39 @@ const ClockDate = () => {
   const setTimeTimer = () => {
     if (turnTimerDigit === "MINUTE_FIRST_DIGIT") {
       setTimer((prevState) => {
-        if (timer.minuteFirstDigit > 5) timer.minuteFirstDigit = 0;
-        return { ...prevState, minuteFirstDigit: timer.minuteFirstDigit++ };
+        if (timer.minuteFirstDigit > 4) {
+          return { ...prevState, minuteFirstDigit: 0 };
+        }
+        return { ...prevState, minuteFirstDigit: timer.minuteFirstDigit + 1 };
       });
     }
 
     if (turnTimerDigit === "MINUTE_SECOND_DIGIT") {
       setTimer((prevState) => {
-        if (timer.minuteSecondDigit > 9) timer.minuteSecondDigit = 0;
-        return { ...prevState, minuteSecondDigit: timer.minuteSecondDigit++ };
+        if (timer.minuteSecondDigit > 8) {
+          return { ...prevState, minuteSecondDigit: 0 };
+        }
+        return { ...prevState, minuteSecondDigit: timer.minuteSecondDigit + 1 };
       });
     }
     if (turnTimerDigit === "SECONDS_FIRST_DIGIT") {
       setTimer((prevState) => {
-        if (timer.secondsFirstDigit > 5) timer.secondsFirstDigit = 0;
-        return { ...prevState, secondsFirstDigit: timer.secondsFirstDigit++ };
+        if (timer.secondsFirstDigit > 4) {
+          return { ...prevState, secondsFirstDigit: 0 };
+        }
+        return { ...prevState, secondsFirstDigit: timer.secondsFirstDigit + 1 };
       });
     }
 
     if (turnTimerDigit === "SECONDS_SECOND_DIGIT") {
       setTimer((prevState) => {
-        if (timer.secondsSecondDigit > 9) timer.secondsSecondDigit = 0;
-        return { ...prevState, secondsSecondDigit: timer.secondsSecondDigit++ };
+        if (timer.secondsSecondDigit > 8) {
+          return { ...prevState, secondsSecondDigitf: 0 };
+        }
+        return {
+          ...prevState,
+          secondsSecondDigit: timer.secondsSecondDigit + 1,
+        };
       });
     }
   };
@@ -290,9 +311,8 @@ const ClockDate = () => {
         minuteSecondDigit,
       ] = alarmTime.match(/\d+/g).join("");
 
-
       setAlarm({
-        hourFirstDigit : parseInt(hourFirstDigit),
+        hourFirstDigit: parseInt(hourFirstDigit),
         hourSecondDigit: parseInt(hourSecondDigit),
         minuteFirstDigit: parseInt(minuteFirstDigit),
         minuteSecondDigit: parseInt(minuteSecondDigit),
