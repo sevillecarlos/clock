@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { formatTime } from "../helpers/formatTime";
 
 import alarmOnSound from "../assets/sound/alarm-sound.mp3";
@@ -153,8 +153,9 @@ const ClockDate = () => {
   };
   const setTimeAlarm = () => {
     if (turnAlarmDigit === "HOUR_FIRST_DIGIT") {
+      console.log('Entre')
+      console.log(alarm)
       setAlarm((prevState) => {
-        console.log(alarm.hourFirstDigit);
         if (alarm.hourFirstDigit > 2) alarm.hourFirstDigit = 0;
         return { ...prevState, hourFirstDigit: alarm.hourFirstDigit++ };
       });
@@ -289,11 +290,12 @@ const ClockDate = () => {
         minuteSecondDigit,
       ] = alarmTime.match(/\d+/g).join("");
 
+
       setAlarm({
-        hourFirstDigit,
-        hourSecondDigit,
-        minuteFirstDigit,
-        minuteSecondDigit,
+        hourFirstDigit : parseInt(hourFirstDigit),
+        hourSecondDigit: parseInt(hourSecondDigit),
+        minuteFirstDigit: parseInt(minuteFirstDigit),
+        minuteSecondDigit: parseInt(minuteSecondDigit),
       });
     }
   }, []);

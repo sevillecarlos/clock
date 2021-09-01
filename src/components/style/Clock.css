@@ -28,7 +28,8 @@
   font-size: 40px;
 }
 .clock {
-  padding-bottom: 30px;
+  border: 5px solid transparent;
+  text-align: center !important;
 }
 
 .title-clock {
@@ -60,6 +61,7 @@
   margin-left: 10%;
   margin-top: 10%;
   width: 80%;
+  text-align: center !important;
 }
 .wrapper-black {
   border-color: beige;
@@ -179,48 +181,273 @@
 }
 @media only screen and (max-width: 1200px) {
   .date-time {
-    margin: 50% auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30%;
+    width: 500px;
+    height: 500px;
+  }
+  .date {
+    font-size: 30px;
+    word-spacing: 5px;
+  }
+  .time {
+    font-size: 45px;
+    font-weight: bold;
+  }
+  .seconds {
+    font-size: 35px;
+  }
+  .period {
+    font-size: 40px;
+    padding-left: 15px;
+  }
+  .clock {
+    padding-bottom: 15px;
+  }
+  .title-clock {
+    margin-top: 20px;
+    font-size: 40px;
+    padding: 10px;
+  }
+  .wrapper {
+    margin-bottom: 30px;
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+  .hour-converter-btn {
+    font-size: 40px;
+    border-radius: 50px;
+    padding: 15px;
+    height: 120px;
+    font-family: "DSEG14-Classic";
+    border: transparent;
+    font-weight: bold;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+  /* ALARM */
+  .alarm {
+    font-size: 50px;
+    margin-top: 14%;
+    font-weight: bold;
+    padding-top: 9px;
+  }
+  .time-alarm {
+    font-size: 35px;
+    font-weight: bold;
+  }
+  .second-alarm {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  .alarm-time-btn {
+    font-size: 30px;
+    padding: 10px;
+    height: 110px;
+  }
+  /* TIMER */
+  .timer {
+    font-size: 50px;
+    padding-top:4.7%;
+    font-weight: bold;
+  }
+  .nano-second-timer {
+    font-size: 30px;
+  }
+  .timer-time-btn {
+    font-size: 30px;
+    padding: 10px;
+    height: 110px;
+  }
+  .pause-time {
+    font-size: 40px;
   }
 }
 
 /* Small tablets to big tablets: from 768 to 1032*/
 @media only screen and (max-width: 1032px) {
   .date-time {
-    margin: 5% 10%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30%;
+    width: 500px;
+    height: 500px;
+  }
+  .date {
+    font-size: 30px;
+    word-spacing: 5px;
+  }
+  .time {
+    font-size: 45px;
+    font-weight: bold;
+  }
+  .seconds {
+    font-size: 35px;
+  }
+  .period {
+    font-size: 40px;
+    padding-left: 15px;
+  }
+  .clock {
+    padding-bottom: 15px;
+  }
+  .title-clock {
+    margin-top: 20px;
+    font-size: 40px;
+    padding: 10px;
+  }
+  .wrapper {
+    margin-bottom: 30px;
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+  .hour-converter-btn {
+    font-size: 40px;
+    border-radius: 50px;
+    padding: 15px;
+    height: 120px;
+    font-family: "DSEG14-Classic";
+    border: transparent;
+    font-weight: bold;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+  /* ALARM */
+  .alarm {
+    font-size: 50px;
+    margin-top: 14%;
+    font-weight: bold;
+    padding-top: 9px;
+  }
+  .time-alarm {
+    font-size: 35px;
+    font-weight: bold;
+  }
+  .second-alarm {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  .alarm-time-btn {
+    font-size: 30px;
+    padding: 10px;
+    height: 110px;
+  }
+  /* TIMER */
+  .timer {
+    font-size: 50px;
+    padding-top:4.7%;
+    font-weight: bold;
+  }
+  .nano-second-timer {
+    font-size: 30px;
+  }
+  .timer-time-btn {
+    font-size: 30px;
+    padding: 10px;
+    height: 110px;
+  }
+  .pause-time {
+    font-size: 40px;
   }
 }
 
 /* Small phones to small tablets: from 481 to 767*/
 @media only screen and (max-width: 767px) {
+  /* CLOCK */
   .date-time {
-    margin: 25% auto;
-    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30%;
+    width: 340px;
     overflow: hidden;
-    height: 350px;
-    border: 30px double black;
-  }
-  .title-clock {
-    font-size: 25px;
-    padding: 10px;
+    height: 340px;
+    border: 30px double;
   }
   .date {
-    font-size: 20px;
+    font-size: 24px;
     word-spacing: 5px;
   }
   .time {
-    font-size: 50px;
+    font-size: 40px;
+    font-weight: bold;
   }
   .seconds {
-    font-size: 25px;
+    font-size: 30px;
   }
   .period {
-    font-size: 30px;
-    padding-left: 10px;
+    font-size: 35px;
+    padding-left: 15px;
   }
-  .hour-changer {
-    font-size: 30px;
+  .clock {
+    padding-bottom: 15px;
+  }
+  .title-clock {
+    margin-top: 20px;
+    font-size: 27px;
+    padding: 10px;
+  }
+  .wrapper {
+    margin-bottom: 10px;
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+  .hour-converter-btn {
+    font-size: 25px;
+    border-radius: 50px;
     padding: 15px;
-    height: 65px;
+    height: 80px;
+    font-family: "DSEG14-Classic";
+    border: transparent;
+    font-weight: bold;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+  /* ALARM */
+  .alarm {
+    font-size: 45px;
+    margin-top: 10.5%;
+    font-weight: bold;
+    padding-top: 9px;
+  }
+  .time-alarm {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .second-alarm {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  .alarm-time-btn {
+    font-size: 15px;
+    padding: 10px;
+    height: 70px;
+  }
+  /* TIMER */
+  .timer {
+    font-size: 45px;
+    padding-top:4.8%;
+    font-weight: bold;
+  }
+  .nano-second-timer {
+    font-size: 25px;
+  }
+  .timer-time-btn {
+    font-size: 15px;
+    padding: 10px;
+    height: 70px;
+  }
+  .pause-time {
+    font-size: 30px;
   }
 }
 
@@ -228,11 +455,17 @@
 @media only screen and (max-width: 400px) {
   /* CLOCK */
   .date-time {
-    margin: 25% 0%;
-    width: 300px;
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
     overflow: hidden;
-    height: 300px;
+    height: 280px;
     border: 30px double;
+  }
+  .date {
+    font-size: 18px;
+    word-spacing: 5px;
   }
   .time {
     font-size: 30px;
@@ -269,7 +502,7 @@
   }
   /* ALARM */
   .alarm {
-    font-size: 35px;
+    font-size: 30px;
     margin-top: 10.5%;
     font-weight: bold;
     padding-top: 9px;
@@ -284,23 +517,23 @@
     margin-left: 10px;
   }
   .alarm-time-btn {
-    font-size: 15px;
+    font-size: 13px;
     padding: 10px;
-    height: 70px;
+    height: 50px;
   }
   /* TIMER */
   .timer {
     font-size: 35px;
-    padding-top: 6px;
+    margin-top: 22%;
     font-weight: bold;
   }
   .nano-second-timer {
     font-size: 20px;
   }
   .timer-time-btn {
-    font-size: 15px;
+    font-size: 13px;
     padding: 10px;
-    height: 70px;
+    height: 50px;
   }
   .pause-time {
     font-size: 25px;
