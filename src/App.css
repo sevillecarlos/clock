@@ -4,24 +4,25 @@
   bottom: 0;
   width: 100%;
   text-align: center;
-  font-size: 30px;
+  font-size: 1.3vw;
   font-weight: bold;
   cursor: pointer;
 }
 
-.footer a {
-  text-decoration: none;
-  color: rgb(43, 39, 39);
-}
+
 
 .footer-text1 {
-  color: black;
+  color: rgb(128, 128, 122);
+  text-decoration: none;
 }
 
 .footer-text2 {
-  color: beige;
+  color: black;
 }
 
+.footer a:hover{
+ color: rgb(65, 65, 55);
+}
 @media only screen and (max-width: 1200px) {
 }
 

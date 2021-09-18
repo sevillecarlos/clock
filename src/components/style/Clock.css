@@ -1,7 +1,7 @@
 .date-time {
-  width: 650px;
+  width: 35vw;
+  height: 35vw;
   overflow: hidden;
-  height: 650px;
   border-radius: 50%;
   border: 50px double;
   margin-left: auto;
@@ -21,11 +21,11 @@
   letter-spacing: 3px;
 }
 .time {
-  font-size: 90px;
+  font-size: 5vw;
   font-weight: bold;
 }
 .seconds {
-  font-size: 40px;
+  font-size: 3vw;
 }
 .clock {
   border: 5px solid transparent;
@@ -33,9 +33,9 @@
 }
 
 .title-clock {
-  margin-top: 20px;
-  font-size: 50px;
-  padding: 20px;
+  margin-top: 5%;
+  font-size: 2.5vw;
+  padding: 3%;
   cursor: pointer;
   font-weight: bold;
 }
@@ -57,7 +57,7 @@
 .wrapper {
   border: 5px solid;
   border-radius: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 1%;
   margin-left: 10%;
   margin-top: 10%;
   width: 80%;
@@ -80,10 +80,9 @@
 }
 
 .hour-converter-btn {
-  font-size: 50px;
+  font-size: 3vw;
   border-radius: 50px;
-  padding: 15px;
-  height: 150px;
+  padding: 2vw;
   font-family: "DSEG14-Classic";
   border: transparent;
   font-weight: bold;
@@ -105,37 +104,27 @@
 }
 .date {
   margin-top: 1px;
-  font-size: 40px;
+  font-size: 2vw;
   word-spacing: 10px;
 }
 
 .period {
-  font-size: 60px;
+  font-size: 4vw;
   padding-left: 20px;
 }
 
-.clock-btn {
-  border: none;
-  border-radius: 30px;
-  margin: 0%;
-  font-size: 25px;
-}
 .alarm {
-  font-size: 100px;
-  margin-top: 10.5%;
+  font-size: 5vw;
+  margin-top: 9.5%;
   font-weight: bold;
 }
 .time-alarm {
-  font-size: 50px;
+  font-size: 3vw;
   font-weight: bold;
 }
 .second-alarm {
-  font-size: 30px;
+  font-size: 2vw;
   font-weight: bold;
-  margin-left: 10px;
-}
-.period-alarm {
-  font-size: 30px;
   margin-left: 10px;
 }
 .alarm-time {
@@ -148,42 +137,40 @@
   color: black;
 }
 .alarm-time-btn {
-  font-size: 25px;
+  font-size: 2vw;
   border-radius: 50px;
   font-weight: bold;
   margin-left: 4px;
-  padding: 15px;
-  height: 150px;
+  padding: 2vw;
   font-family: "DSEG14-Classic";
   border: transparent;
 }
 
 .timer {
-  font-size: 100px;
-  margin-top: 26%;
+  font-size: 5vw;
+  margin-top: 26.5%;
   font-weight: bold;
 }
 .nano-second-timer {
-  font-size: 50px;
+  font-size: 3vw;
 }
 .timer-time-btn {
-  font-size: 25px;
+  font-size: 2vw;
   border-radius: 50px;
   font-weight: bold;
   margin-left: 4px;
-  padding: 15px;
-  height: 150px;
+  padding: 2vw;
   font-family: "DSEG14-Classic";
   border: transparent;
 }
 .pause-time {
-  font-size: 50px;
+  font-size: 3vw;
 }
 @media only screen and (max-width: 1200px) {
   .date-time {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30%;
+    margin-top: 5%;
     width: 500px;
     height: 500px;
   }
@@ -273,7 +260,7 @@
   .date-time {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30%;
+    margin-top: 5%;
     width: 500px;
     height: 500px;
   }
@@ -364,7 +351,7 @@
   .date-time {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30%;
+    margin-top: 10%;
     width: 340px;
     overflow: hidden;
     height: 340px;
@@ -458,7 +445,7 @@
     width: 280px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20%;
+    margin-top: 10%;
     overflow: hidden;
     height: 280px;
     border: 30px double;
