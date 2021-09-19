@@ -3,12 +3,15 @@ A watch where you can see the time, set an alarm and use it as a stopwatch, Feel
 
 ## Functions 
 * **Clock**
+
 ![Clock Image!](/assets/images/clock-image.png "Clock ")
 
 * **Alarm**
+
 ![Alarm Image!](/assets/images/alarm-image.png "Alarm ")
 
 * **Timer**
+
 ![Timer Image!](/assets/images/timer-image.png "Timer ")
 
 # Built
