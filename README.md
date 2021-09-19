@@ -1,13 +1,13 @@
 # Typing Race
 A watch where you can see the time, set an alarm and use it as a stopwatch, Feel the same experience as if you had it on your wrist from your browser.
 
-## Functions 
+## Instructions 
 * **Clock**
-
+To convert the clock time from 12 to 24 or from 24 to 12 there is the button to convert the time.
 ![Clock Image!](/assets/images/clock-image.png "Clock ")
 
 * **Alarm**
-
+To set an alarm, move through the digits with the *CHANGE* button when a digit is selected it will turn gray and with the *SET TIME* button you can change the number of the select digit, when no digit is selected or is in gray color means the alarm time has been set.
 ![Alarm Image!](/assets/images/alarm-image.png "Alarm ")
 
 * **Timer**
@@ -17,9 +17,9 @@ A watch where you can see the time, set an alarm and use it as a stopwatch, Feel
 # Built
 ## Development Technologies
 - React.js
-- 
+
 # Live Demo
-Try it! [Clock ](https://clock-alarm-timer.netlify.app/)
+Try it! [Clock](https://clock-alarm-timer.netlify.app/)
 
 # Getting Start
 ```
