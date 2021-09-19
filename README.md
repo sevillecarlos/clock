@@ -10,7 +10,7 @@ To convert the clock time from 12 to 24 or from 24 to 12 there is the **12/24-CO
 
 * **Alarm**
 
-To set an alarm, move through the digits with the **CHANGE** button when a digit is selected it will turn gray and with the *SET TIME* button you can change the number of the select digit, when no digit is selected or is in gray color means the alarm time has been set.
+To set an alarm, move through the digits with the **CHANGE** button when a digit is selected it will turn gray and with the **SET TIME** button you can change the number of the select digit, when no digit is selected or is in gray color means the alarm time has been set.
 
 ![Alarm Image!](/assets/images/alarm-image.png "Alarm ")
 
