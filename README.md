@@ -13,16 +13,14 @@ A watch where you can see the time, set an alarm and use it as a stopwatch, Feel
 
 # Built
 ## Development Technologies
-- Vue.js 
-## Libraries
-- BootstapVue
-
+- React.js
+- 
 # Live Demo
-Try it! [Typing Race ](https://typing-race-app.netlify.app/)
+Try it! [Clock ](https://clock-alarm-timer.netlify.app/)
 
 # Getting Start
 ```
-git clone https://github.com/sevillecarlos/imposible-hang-man.git
+git clone https://github.com/sevillecarlos/clock.git
 ```
 ### or Download the zip.
 ## Project setup
@@ -31,14 +29,8 @@ npm install
 ```
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm start
 ```
-### Create your .env file for the environment variables
-* *VUE_APP_URL*
-
-## Typing Race Server
-Navigate to [Typing Race Server ](https://github.com/sevillecarlos/typing-race-beckend) to found the server for the app.
-
 # Author
 ## Carlos Alberto Sevilla Fernandez
 * Github: [@sevillecarlos](https://github.com/sevillecarlos)
