@@ -3,14 +3,21 @@ A watch where you can see the time, set an alarm and use it as a stopwatch, Feel
 
 ## Instructions 
 * **Clock**
-To convert the clock time from 12 to 24 or from 24 to 12 there is the button to convert the time.
+
+To convert the clock time from 12 to 24 or from 24 to 12 there is the **12/24-CONVERT** button to convert the time.
+
 ![Clock Image!](/assets/images/clock-image.png "Clock ")
 
 * **Alarm**
-To set an alarm, move through the digits with the *CHANGE* button when a digit is selected it will turn gray and with the *SET TIME* button you can change the number of the select digit, when no digit is selected or is in gray color means the alarm time has been set.
+
+To set an alarm, move through the digits with the **CHANGE** button when a digit is selected it will turn gray and with the *SET TIME* button you can change the number of the select digit, when no digit is selected or is in gray color means the alarm time has been set.
+
 ![Alarm Image!](/assets/images/alarm-image.png "Alarm ")
 
+
 * **Timer**
+
+To set the timer move through the digits with the **CHANGE** button, when a digit is selected it will turn gray and with the **SET TIME** button change the number of each of the digits, when no digit is selected or is in Gray color means that the stopwatch time has been set, and the **START** button will come out to start the stopwatch.
 
 ![Timer Image!](/assets/images/timer-image.png "Timer ")
 
