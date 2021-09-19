@@ -1,4 +1,4 @@
-# Typing Race
+# Clock
 A watch where you can see the time, set an alarm and use it as a stopwatch, Feel the same experience as if you had it on your wrist from your browser.
 
 ## Instructions 
