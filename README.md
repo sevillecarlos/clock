@@ -19,11 +19,14 @@ To set an alarm, move through the digits with the **CHANGE** button when a digit
 
 To set the timer move through the digits with the **CHANGE** button, when a digit is selected it will turn gray and with the **SET TIME** button change the number of each of the digits, when no digit is selected or is in Gray color means that the stopwatch time has been set, and the **START** button will come out to start the stopwatch.
 
+
+![Timer Image!](/assets/images/timer-image.png "Timer ")
+
 * **Dark Mode**
 
 If you want to change the color or theme of the clock, just click on the square where the time is and it will change color.
 
-![Dark Mode Image!](/assets/images/dark-clock-image.png "Dark Mode Clock ")
+![Dark Mode Image!](/assets/images/clock-dark-image.png "Dark Mode Clock ")
 
 # Built
 ## Development Technologies
