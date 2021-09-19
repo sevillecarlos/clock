@@ -48,7 +48,7 @@ npm start
 
 # Contributing
 Contributions, issues and feature requests are welcome!
-Feel free to check the [Issues Page](https://github.com/sevillecarlos/typing-race/issues).
+Feel free to check the [Issues Page](https://github.com/sevillecarlos/clock/issues).
 
 # License
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.
