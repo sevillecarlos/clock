@@ -1,43 +1,30 @@
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+@import url(https://fonts.googleapis.com/css?family=Lato:700);
+
+.ribbon {
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  left: -50px;
+  top: 40px;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-box-shadow: 0 0 10px #888;
+  -moz-box-shadow: 0 0 10px #888;
+  box-shadow: 0 0 10px #888;
+}
+.ribbon a {
+  border: 1px solid rgb(255, 255, 255);
+  color: #fff;
+  display: block;
+  font: bold 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 1px 0;
+  padding: 10px 50px;
   text-align: center;
-  font-size: 1.3vw;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-
-
-.footer-text1 {
-  color: rgb(128, 128, 122);
   text-decoration: none;
-}
-
-.footer-text2 {
-  color: black;
-}
-
-.footer a:hover{
- color: rgb(65, 65, 55);
-}
-@media only screen and (max-width: 1200px) {
-}
-
-/* Small tablets to big tablets: from 768 to 1032*/
-@media only screen and (max-width: 1032px) {
-}
-
-/* Small phones to small tablets: from 481 to 767*/
-@media only screen and (max-width: 767px) {
-}
-
-/*Small Phone from 0 to 480px*/
-@media only screen and (max-width: 400px) {
-  .footer {
-    font-size: 15px;
-    padding: 10px;
-  }
+  text-shadow: 0 0 5px #444;
 }

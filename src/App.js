@@ -4,7 +4,11 @@ function App() {
   return (
     <div className="app">
       <Home />
-      
+      <div class="ribbon">
+        <a href="https://github.com/sevillecarlos/clock" target="blank">
+           @sevillecarlos🍒
+        </a>
+      </div>
     </div>
   );
 }
