@@ -28,3 +28,50 @@
   text-decoration: none;
   text-shadow: 0 0 5px #444;
 }
+
+/***************************************************************************/
+/* Big tablets to 1200px*/
+/* @media only screen and (max-width: 1200px) {
+} */
+
+/* Small tablets to big tablets: from 768 to 1032*/
+/* @media only screen and (max-width: 1032px) {
+} */
+
+/* Small phones to small tablets: from 481 to 767*/
+@media only screen and (max-width: 767px) {
+    .ribbon {
+    left: -40px;
+    top: 15px;
+    -webkit-transform: rotate(-40deg);
+    -moz-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    -o-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+  }
+  .ribbon a {
+    font: bold 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    margin: 2px 0;
+    padding: 5px 30px;
+  }
+}
+
+/*Small Phone from 0 to 480px*/
+@media only screen and (max-width: 400px) {
+  .ribbon {
+    left: -40px;
+    top: 15px;
+    -webkit-transform: rotate(-40deg);
+    -moz-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    -o-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+  }
+  .ribbon a {
+    font: bold 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    margin: 2px 0;
+    padding: 5px 30px;
+  }
+}

@@ -9,7 +9,7 @@
   cursor: pointer;
   margin-top: 1vw;
 }
-.black { 
+.black {
   border-color: rgba(226, 226, 222, 0.144) !important;
   background: black !important;
 }
@@ -136,7 +136,8 @@
 .alarm-time-beige {
   color: black;
 }
-.alarm-time-btn,.timer-time-btn  {
+.alarm-time-btn,
+.timer-time-btn {
   font-size: 1.6vw;
   border-radius: 50px;
   font-weight: bold;
@@ -157,97 +158,153 @@
 .pause-time {
   font-size: 3vw;
 }
+/***********************************************************************************/
+/* Small tablets to big tablets: from 768 to 1032*/
+@media only screen and (max-width: 1032px) {
+  /* CLOCK */
+  .date-time {
+    width: 75vw;
+    margin: 20% auto;
+    height: 75vw;
+    border:7vw double;
+  }
+  .date {
+    font-size: 4.5vw;
+    word-spacing: 1px;
+  }
+  .time {
+    font-size: 8.9vw;
+    font-weight: bold;
+  }
+  .seconds {
+    font-size: 6vw;
+  }
+  .period {
+    font-size: 6.8vw;
+    padding-left: 2%;
+  }
+  .title-clock {
+    margin-top: 5%;
+    font-size: 5.8vw;
+    padding: 4%;
+  }
+  .wrapper {
+    border-width: 5px;
+    border-radius: 15px;
+    height: 26vw;
+    padding: 1%;
+  }
+  .hour-converter-btn {
+    font-size: 5vw;
+    padding: 5% !important;
+  }
+  /* ALARM */
+  .alarm {
+    font-size: 8.9vw;
+    font-weight: bold;
+  }
+  .time-alarm {
+    font-size: 7vw;
+    font-weight: bold;
+  }
+  .second-alarm {
+    font-size: 5vw;
+    font-weight: bold;
+    margin-left: 4px;
+  }
+  .alarm-time-btn {
+    font-size: 3.5vw;
+    padding: 5.5%;
+  }
+  /* TIMER */
+  .timer {
+    font-size: 8.9vw;
+    font-weight: bold;
+  }
+  .nano-second-timer {
+    font-size: 5.5vw;
+  }
+  .timer-time-btn {
+    font-size: 3.5vw;
+    padding: 5.5%;
+  }
+  .pause-time {
+    font-size: 5vw;
+  }
+}
 
 /* Small phones to small tablets: from 481 to 767*/
 @media only screen and (max-width: 767px) {
   /* CLOCK */
   .date-time {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10%;
-    width: 340px;
-    overflow: hidden;
-    height: 340px;
-    border: 30px double;
+    width: 75vw;
+    margin: 25% auto;
+    height: 75vw;
+    border: 25px double;
   }
   .date {
-    font-size: 24px;
-    word-spacing: 5px;
+    font-size: 4.5vw;
+    word-spacing: 1px;
   }
   .time {
-    font-size: 40px;
+    font-size: 8.9vw;
     font-weight: bold;
   }
   .seconds {
-    font-size: 30px;
+    font-size: 6vw;
   }
   .period {
-    font-size: 35px;
-    padding-left: 15px;
-  }
-  .clock {
-    padding-bottom: 15px;
+    font-size: 6.8vw;
+    padding-left: 2%;
   }
   .title-clock {
-    margin-top: 20px;
-    font-size: 27px;
-    padding: 10px;
+    margin-top: 5%;
+    font-size: 5.8vw;
+    padding: 4%;
   }
   .wrapper {
-    margin-bottom: 10px;
-    margin-left: 10%;
-    margin-top: 5%;
+    border-width: 2px;
+    border-radius: 10px;
+    height: 26vw;
+    padding: 1%;
   }
+
   .hour-converter-btn {
-    font-size: 25px;
-    border-radius: 50px;
-    padding: 15px;
-    height: 80px;
-    font-family: "DSEG14-Classic";
-    border: transparent;
-    font-weight: bold;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
-}
+    font-size: 5vw;
+    padding: 5% !important;
+  }
   /* ALARM */
   .alarm {
-    font-size: 45px;
-    margin-top: 10.5%;
+    font-size: 8.9vw;
     font-weight: bold;
-    padding-top: 9px;
   }
   .time-alarm {
-    font-size: 30px;
+    font-size: 7vw;
     font-weight: bold;
   }
   .second-alarm {
-    font-size: 16px;
+    font-size: 5vw;
     font-weight: bold;
-    margin-left: 10px;
+    margin-left: 4px;
   }
   .alarm-time-btn {
-    font-size: 15px;
-    padding: 10px;
-    height: 70px;
+    font-size: 3.5vw;
+    padding: 5.5%;
   }
   /* TIMER */
   .timer {
-    font-size: 45px;
-    padding-top:4.8%;
+    font-size: 8.9vw;
     font-weight: bold;
   }
   .nano-second-timer {
-    font-size: 25px;
+    font-size: 5.5vw;
   }
   .timer-time-btn {
-    font-size: 15px;
-    padding: 10px;
-    height: 70px;
+    font-size: 3.5vw;
+    padding: 5.5%;
   }
   .pause-time {
-    font-size: 30px;
+    font-size: 5vw;
   }
 }
 
@@ -255,87 +312,72 @@
 @media only screen and (max-width: 400px) {
   /* CLOCK */
   .date-time {
-    width: 280px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10%;
-    overflow: hidden;
-    height: 280px;
-    border: 30px double;
+    width: 75vw;
+    margin: 25% auto;
+    height: 75vw;
+    border: 25px double;
   }
   .date {
-    font-size: 18px;
-    word-spacing: 5px;
+    font-size: 4.5vw;
+    word-spacing: 1px;
   }
   .time {
-    font-size: 30px;
+    font-size: 8.9vw;
     font-weight: bold;
   }
   .seconds {
-    font-size: 20px;
+    font-size: 6vw;
   }
   .period {
-    font-size: 25px;
-    padding-left: 10px;
-  }
-  .clock {
-    padding-bottom: 10px;
+    font-size: 6.8vw;
+    padding-left: 2%;
   }
   .title-clock {
-    margin-top: 20px;
-    font-size: 20px;
-    padding: 10px;
+    margin-top: 5%;
+    font-size: 5.8vw;
+    padding: 4%;
   }
   .wrapper {
-    margin-bottom: 10px;
-    margin-left: 10%;
-    margin-top: 5%;
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 1%;
+    height: 26vw;
   }
   .hour-converter-btn {
-    font-size: 20px;
-    border-radius: 50px;
-    padding: 15px;
-    height: 80px;
-    font-family: "DSEG14-Classic";
-    border: transparent;
-    font-weight: bold;
+    font-size: 5vw;
+    padding: 5% !important;
   }
   /* ALARM */
   .alarm {
-    font-size: 30px;
-    margin-top: 10.5%;
+    font-size: 8.9vw;
     font-weight: bold;
-    padding-top: 9px;
   }
   .time-alarm {
-    font-size: 20px;
+    font-size: 7vw;
     font-weight: bold;
   }
   .second-alarm {
-    font-size: 11px;
+    font-size: 5vw;
     font-weight: bold;
-    margin-left: 10px;
+    margin-left: 4px;
   }
   .alarm-time-btn {
-    font-size: 13px;
-    padding: 10px;
-    height: 50px;
+    font-size: 3.5vw;
+    padding: 5.5%;
   }
   /* TIMER */
   .timer {
-    font-size: 35px;
-    margin-top: 22%;
+    font-size: 8.9vw;
     font-weight: bold;
   }
   .nano-second-timer {
-    font-size: 20px;
+    font-size: 5.5vw;
   }
   .timer-time-btn {
-    font-size: 13px;
-    padding: 10px;
-    height: 50px;
+    font-size: 3.5vw;
+    padding: 5.5%;
   }
   .pause-time {
-    font-size: 25px;
+    font-size: 5vw;
   }
 }
