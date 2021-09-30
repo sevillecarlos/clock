@@ -80,9 +80,13 @@ const ClockDate = () => {
     });
 
     setConvert(convert);
-
+    console.log(convertHour);
     setTime({
-      hour: convert ? Math.abs(convertHour) : convertHour,
+      hour: convert
+        ? Math.abs(convertHour) === 0
+          ? 12
+          : Math.abs(convertHour)
+        : convertHour,
       minutes: minutes,
       seconds: second,
       period: convert ? (hour - 12 < 0 ? "am" : "pm") : "",
@@ -93,7 +97,6 @@ const ClockDate = () => {
     setShowDotsS(showDots.current);
 
     const alarmTime = localStorage.getItem("alarmtime");
-
     const clockTime = `${hour}:${minutes}`;
     checkSetAlarm(clockTime, alarmTime);
   };
