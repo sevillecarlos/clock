@@ -1,7 +1,7 @@
 # Clock
 A watch where you can see the time, set an alarm and use it as a stopwatch, Feel the same experience as if you had it on your wrist from your browser.
 
-## Instructions 
+## Steps
 * **Clock**
 
 To convert the clock time from 12 to 24 or from 24 to 12 there is the **12/24-CONVERT** button to convert the time.
