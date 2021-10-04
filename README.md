@@ -30,7 +30,8 @@ If you want to change the color or theme of the clock, just click on the square 
 
 # Built
 ## Development Technologies
-- React.js
+![](https://img.shields.io/badge/Front--End-React-blue)
+![](https://img.shields.io/badge/Progamming--Language-JavaScript-yellow)
 
 # Live Demo
 Try it! [Clock](https://clock-alarm-timer.netlify.app/)
