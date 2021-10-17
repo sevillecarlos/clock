@@ -2,15 +2,17 @@
 > A watch where you can see the time, set an alarm and use it as a stopwatch, Feel the same experience as if you had it on your wrist from your browser.
 
 ## Steps
+
+* To change the mode of the clock , click in title of the modes.
+
+![Change Clock Mode!](/assets/images/clock-change-mode.png "Change Clock Mode")
+
 * **Clock**
 
 Convert the clock time from 12 to 24 or from 24 to 12 there is the **12/24-CONVERT** button to convert the time.
 
 ![Clock Image!](/assets/images/clock-image.png "Clock ")
 
-* To change the mode of the clock , click in title of the modes.
-
-![Change Clock Mode!](/assets/images/clock-change-mode.png "Change Clock Mode")
 
 * **Alarm**
 
