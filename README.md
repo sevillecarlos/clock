@@ -3,7 +3,7 @@
 
 ## Steps
 
-* To change the mode of the clock , click in title of the modes.
+* To change the mode , click in title.
 
 ![Change Clock Mode!](/assets/images/clock-change-mode.png "Change Clock Mode")
 
